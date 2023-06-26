@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/TicketAr/static/css/main.94395371.css",
+    "main.js": "/TicketAr/static/js/main.00874da1.js",
+    "static/js/787.55c89577.chunk.js": "/TicketAr/static/js/787.55c89577.chunk.js",
+    "static/media/magnifying-glass.svg": "/TicketAr/static/media/magnifying-glass.60308050cd352ee465c5.svg",
+    "index.html": "/TicketAr/index.html",
+    "static/media/close.svg": "/TicketAr/static/media/close.ae469738e479d31aa952364e12120ad2.svg",
+    "static/media/angle-down-solid.svg": "/TicketAr/static/media/angle-down-solid.64fc78f263aa45efeb154028edb2b52d.svg",
+    "main.94395371.css.map": "/TicketAr/static/css/main.94395371.css.map",
+    "main.00874da1.js.map": "/TicketAr/static/js/main.00874da1.js.map",
+    "787.55c89577.chunk.js.map": "/TicketAr/static/js/787.55c89577.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.94395371.css",
+    "static/js/main.00874da1.js"
+  ]
+}
