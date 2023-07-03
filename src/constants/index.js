@@ -714,6 +714,3 @@ export const abi = [
   }
 ]
 export const CONTRACT_ADDRESS = "0x46578eAd31A51a52b62625BA723ACAd12cF4410A"
-//
-/* Sepolia address "0xBB9825037fe381fE8CA5201a69cb670CB6d913ff" */
-//0x5FbDB2315678afecb367f032d93F642f64180aa3
