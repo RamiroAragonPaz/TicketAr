@@ -1,5 +1,5 @@
 import './App.css';
-import Web3Modal from "web3modal";
+
 import { abi, CONTRACT_ADDRESS } from "./constants/index";
 import { useEffect, useRef, useState } from 'react';
 import { ethers, Contract, providers, utils } from "ethers";
@@ -22,9 +22,6 @@ function App() {
 
 
   const loadBlockchainData = async()=>{
-
-    
-
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     setProvider(provider);
     const ticketAr = new Contract(
@@ -33,8 +30,11 @@ function App() {
       provider
     );
     setTicketAr(ticketAr);
+    console.log(ticketAr)
     const totalShows = await ticketAr.totalShows();
+    const totalSupply = await ticketAr.totalSupply();
     const shows = [];
+    console.log(totalSupply.toString())
     for(let i = 1; i<= totalShows; i++){
       const show = await ticketAr.getShow(i);
       shows.push(show);
@@ -49,13 +49,7 @@ function App() {
 
   }
 
-
-  
-
-
-
   useEffect(()=>{
-    
     loadBlockchainData();
   },[])
 
@@ -64,7 +58,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <Navigation account={account} setAccount={setAccount}/>
+        <Navigation shows={shows} account={account} setAccount={setAccount} toggle={toggle} setToggle={setToggle}  ticketAr={ticketAr} provider={provider}/>
         <h2 className='header__title'>Event Tickets</h2>
       </header>
       <Sort/>

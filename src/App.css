@@ -33,9 +33,10 @@ nav {
 }
 
 .nav__brand {
+  justify-items: auto;
   display: flex;
-  align-items: center;
-  padding: 0 75px;
+  align-items: start;
+  padding: 0 145px;
   grid-column: 1 / span 3;
   height: 65px;
 }
@@ -104,11 +105,31 @@ nav {
   background-color: rgba(34, 64, 109, 0.3);
 }
 
+.nav__buttons{
+  justify-self: center;
+  margin-top: 1vh; 
+}
+
 .nav__connect {
   width: 175px;
   height: 50px;
-  margin: 0 75px 0 auto;
-  background: rgba(0, 0, 0, 0.707);
+  margin: 0 0 0 auto;
+  background: rgba(81, 81, 81, 0.707);
+  color: var(--clr-white);
+  border: none;
+  border-radius: 4px;
+  font-family: "Open Sans";
+  font-size: 1.10em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 250ms ease;
+}
+
+.nav__tickets{
+  width: 175px;
+  height: 50px;
+  margin: 40px 0 0 auto;
+  background: rgba(81, 81, 81, 0.707);
   color: var(--clr-white);
   border: none;
   border-radius: 4px;
@@ -120,6 +141,10 @@ nav {
 }
 
 .nav__connect:hover {
+  background-color: var(--clr-dark-blue);
+}
+
+.nav__tickets:hover {
   background-color: var(--clr-dark-blue);
 }
 
@@ -138,7 +163,7 @@ header {
 
 .header__title {
   color: var(--clr-white);
-
+  
   position: absolute;
   bottom: 25px;
   left: 10%;
@@ -334,6 +359,38 @@ header {
   transform: translate(-50%, -50%);
 }
 
+.ticketbox {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.ticketbox__place {
+  background: linear-gradient(to bottom, var(--clr-light-blue), var(--clr-white) 75%);
+  border: 10px solid var(--clr-grey);
+  border-radius: 8px;
+  width: 90%;
+  max-width: 1200px;
+  height: 85%;
+  margin: 0 auto;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  overflow-x: scroll;
+}
+
+.tricket__title{
+  margin: 50px 0 0 50px;
+}
+
 .occasion__seating {
   display: grid;
   gap: 5px;
@@ -486,11 +543,11 @@ header {
   }
 
   .nav__brand {
-    padding: 30px 50px;
+    padding: 0px 60px;
   }
 
-  .nav__connect {
-    margin: 0 50px 0 auto;
+  .nav__connect .nav__tickets {
+    margin: 0 0 0 auto;
   }
 }
 

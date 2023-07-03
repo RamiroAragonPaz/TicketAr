@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import close from '../assets/close.svg'
 import Seat from "./Seat";
+import { Contract } from 'ethers'
+import { abi, CONTRACT_ADDRESS } from "../constants";
 
 const SeatChart = ({ show, ticketAr, provider, setToggle }) => {
     
@@ -16,9 +18,15 @@ const SeatChart = ({ show, ticketAr, provider, setToggle }) => {
     const buyHandler = async(_seat) => {
         setHasSold(false);
         const signer = await provider.getSigner();
-        const tx = await ticketAr.connect(signer).mint(show.id, _seat, {value: show.cost, gasLimit: 30000000});
-        await tx.wait();
-        hasSold(true)
+        const contractTx = new Contract(
+            CONTRACT_ADDRESS,
+            abi,
+            signer
+        )
+        const tx = await contractTx.mint(show.id, _seat, { value: show.cost, gasLimit: 3000000 });
+        console.log(tx)
+        await tx.wait(); 
+        setHasSold(true)
     }    
 
     useEffect(()=>{
