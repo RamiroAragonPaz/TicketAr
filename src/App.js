@@ -49,6 +49,7 @@ function App() {
 
   }
 
+  
   useEffect(()=>{
     loadBlockchainData();
   },[])
