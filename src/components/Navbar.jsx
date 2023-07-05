@@ -43,13 +43,13 @@ const Navigation = ({ shows, account, setAccount, ticketAr  }) => {
             {account ? (
                 <div className="nav__buttons">
                     <div>
-                    <button
-                    type="button"
-                    className="nav__connect">
-                        {account.slice(0,6) + '...' + account.slice(38,42)}
-                    </button>
+                        <button
+                        type="button"
+                        className="nav__connect">
+                            {account.slice(0,6) + '...' + account.slice(38,42)}
+                        </button>
                     </div>
-                    <div>
+                    <div className="nav__ticket">
                     <button 
                     type="button" 
                     className="nav__tickets"
@@ -115,12 +115,14 @@ const Navigation = ({ shows, account, setAccount, ticketAr  }) => {
                     )}
                 </div>
                 ):(
-                <button
-                type="button"
-                className="nav__connect"
-                onClick={connectHandler}>
-                    Connect
-                </button>
+                <div className="nav__buttons">
+                    <button
+                    type="button"
+                    className="nav__connect"
+                    onClick={connectHandler}>
+                        Connect
+                    </button>
+                </div>
             )}
         </nav>
     )

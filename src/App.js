@@ -49,7 +49,7 @@ function App() {
 
   }
 
-  
+
   useEffect(()=>{
     loadBlockchainData();
   },[])
@@ -60,9 +60,9 @@ function App() {
     <div className="App">
       <header>
         <Navigation shows={shows} account={account} setAccount={setAccount} toggle={toggle} setToggle={setToggle}  ticketAr={ticketAr} provider={provider}/>
-        <h2 className='header__title'>Event Tickets</h2>
       </header>
-      <Sort/>
+      <h2 className='header__title'>Event Tickets</h2>
+      <Sort className='sort'/>
       <div className='cards'>
           {shows.map((show, index)=>{
             return (
